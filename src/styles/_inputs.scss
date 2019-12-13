@@ -1,0 +1,33 @@
+.input-label {
+    position: relative;
+
+    input {
+        border: 0;
+        width: 100%;
+        color: #FFF;
+        height: 35px;
+        outline: none;
+        font-size: 20px;
+        background: none;
+        border-bottom: 1px solid #C79AD7;
+
+        &:focus + span,
+        &.filled + span {
+            top: -10px;
+            font-size: 10px;
+            transition: all .3s;
+        }
+    }
+
+    span {
+        left: 0;
+        top: 10px;
+        width: 100%;
+        font-size: 15px;
+        text-align: left;
+        font-weight: 100;
+        position: absolute;
+        pointer-events: none;
+        text-transform: uppercase;
+    }
+}
