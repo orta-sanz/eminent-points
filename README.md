@@ -21,8 +21,5 @@ It is the perfect excuse to program :)
 ## Dependencies
 Use `yarn install` to install the required dependencies.
 
-## Todo
-As always, the "nice to have" list :)
-- [ ] Testing
-- [ ] Responsive version
-- [ ] Improve Styles (less SASS code can do the work)
+## Start local server
+After installing all dependencies you can run `yarn start`.

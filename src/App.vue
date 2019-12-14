@@ -1,28 +1,28 @@
 <template>
-  <div>
-    <SectionHeader />
+    <div>
+        <SectionHeader />
 
-    <transition name="fade">
-      <InitialForm v-if="!$store.getters.gameIsStarted" />
-    </transition>
+        <transition name="fade">
+            <InitialForm v-if="!$store.getters.gameIsStarted" />
+        </transition>
 
-    <transition name="fade">
-      <section
-        v-if="$store.getters.gameIsStarted"
-        style="transition-delay: 0.5s;"
-        class="player-board"
-      >
-        <PlayerBoard
-          :name="$store.getters.playerName('one')"
-          player="one"
-        />
-        <PlayerBoard
-          :name="$store.getters.playerName('two')"
-          player="two"
-        />
-      </section>
-    </transition>
-  </div>
+        <transition name="fade">
+            <section
+                v-if="$store.getters.gameIsStarted"
+                style="transition-delay: 0.5s;"
+                class="player-board"
+            >
+                <PlayerBoard
+                    :name="$store.getters.playerName('one')"
+                    player="one"
+                />
+                <PlayerBoard
+                    :name="$store.getters.playerName('two')"
+                    player="two"
+                />
+            </section>
+        </transition>
+    </div>
 </template>
 
 <script>
