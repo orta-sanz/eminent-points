@@ -3,6 +3,11 @@ module.exports = {
         'eslint:recommended',
         'plugin:vue/recommended'
     ],
+    env: {
+        browser: true,
+        amd: true,
+        node: true
+    },
     rules: {
         indent: [
             'error',
