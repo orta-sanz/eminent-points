@@ -2,41 +2,47 @@
     <section class="initial-form">
         <p>En primer lugar, introduce el nombre de los jugadores.</p>
 
-        <article
-            v-for="playerNumber in 2"
-            :key="playerNumber"
-            class="initial-form--player"
+        <form
+            class="initial-form--wrapper"
+            @submit="startGame"
         >
-            <label class="initial-form--label">
-                <p>Jugador {{ playerNumber }}</p>
+            <article
+                v-for="playerNumber in 2"
+                :key="playerNumber"
+                class="initial-form--player"
+            >
+                <label class="initial-form--label">
+                    <p>Jugador {{ playerNumber }}</p>
 
-                <div class="input-label initial-form--input">
-                    <input
-                        type="text"
-                        :name="`${playerNumber === 1 ? 'one' : 'two'}`"
-                        :class="`${$store.getters.playerName(playerNumber === 1 ? 'one' : 'two') ? 'filled' : ''}`"
-                        @keyup="updatePlayerName"
-                    >
-                    <span>Introduzca un nombre</span>
-                </div>
-            </label>
-        </article>
+                    <div class="input-label initial-form--input">
+                        <input
+                            type="text"
+                            :name="`${playerNumber === 1 ? 'one' : 'two'}`"
+                            :class="`${$store.getters.playerName(playerNumber === 1 ? 'one' : 'two') ? 'filled' : ''}`"
+                            @keyup="updatePlayerName"
+                        >
+                        <span>Introduzca un nombre</span>
+                    </div>
+                </label>
+            </article>
 
-        <button
-            type="button"
-            name="button"
-            class="btn initial-form--button"
-            @click="startGame"
-        >
-          ¡Empezar!
-        </button>
+            <button
+                type="submit"
+                name="button"
+                class="btn initial-form--button"
+            >
+              ¡Empezar!
+            </button>
+        </form>
     </section>
 </template>
 
 <script>
 export default {
     methods: {
-        startGame: function() {
+        startGame: function(e) {
+            e.preventDefault();
+
             if(this.$store.getters.playerName('one') && this.$store.getters.playerName('two')) {
                 this.$store.commit('startNewGame');
             }
@@ -52,22 +58,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    @import '../styles/_variables.scss';
+
     .initial-form {
         color: #FFF;
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 40px;
-        text-align: center;
+        margin: 0 16px;
 
         > p {
-            margin: 30px 0;
             font-weight: 300;
             flex-basis: 100%;
+
+            @media (min-width: $breakpoint-tablet) {
+                text-align: center;
+            }
+        }
+
+        &--wrapper {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
         }
 
         &--player {
-            flex-basis: 50%;
+            flex-basis: 100%;
 
             p {
                 font-weight: 300;
@@ -76,12 +89,19 @@ export default {
                 letter-spacing: -1px;
                 text-transform: uppercase;
             }
+
+            @media (min-width: $breakpoint-tablet) {
+                flex-basis: 50%;
+            }
         }
 
         &--label {
-            width: 60%;
             margin: 0 auto;
             display: block;
+
+            @media (min-width: $breakpoint-tablet) {
+                width: 60%;
+            }
         }
 
         &--input {
