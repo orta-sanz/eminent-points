@@ -19,10 +19,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    @import '../styles/_variables.scss';
+
     .section-header {
-        height: 35vh;
         display: flex;
         position: relative;
+        margin-bottom: 64px;
         background-size: cover;
         justify-content: center;
         background-position: center center;
@@ -37,10 +39,15 @@ export default {
             }
 
             h1 {
-                font-size: 90px;
+                font-size: 70px;
                 letter-spacing: -5px;
                 text-shadow: 0px 0px 9px #403BEF;
+
+                @media (min-width: $breakpoint-tablet) {
+                    font-size: 90px;
+                }
             }
+
             h2 {
                 font-size: 30px;
                 font-weight: 400;
