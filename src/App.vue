@@ -40,6 +40,7 @@ export default {
 </script>
 
 <style lang="scss">
+    @import './styles/vendors/fontello.css';
     @import './styles/_buttons.scss';
     @import './styles/inputs.scss';
 

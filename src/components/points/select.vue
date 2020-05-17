@@ -61,14 +61,15 @@ export default {
         }
     },
     data: function() {
-        const { player } = this.$props;
-        const { playerPoints } = this.$store.getters;
-
         return {
             selectedPointType: false,
-            playerPointTypes: playerPoints(player),
             gamePointTypes,
         };
+    },
+    computed: {
+        playerPointTypes() {
+            return this.$store.getters.playerPoints(this.$props.player);
+        }
     },
     methods: {
         addPointType: function() {

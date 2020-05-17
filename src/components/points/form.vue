@@ -14,6 +14,11 @@
                 :placeholder="placeholder.quantity"
                 @keyup="updatePointValue"
             >
+
+            <i
+                class="icon-trash-empty"
+                @click="removePoint"
+            />
         </fieldset>
     </div>
 </template>
@@ -45,6 +50,14 @@ export default {
         };
     },
     methods: {
+        removePoint: function() {
+            const { player, point } = this.$props;
+
+            this.$store.commit('removePlayerPoint', {
+                player: player,
+                pointId: point.id
+            });
+        },
         updatePointValue: function() {
             const { points, quantity } = this;
             const { player, point } = this.$props;
@@ -66,7 +79,7 @@ export default {
         margin: 15px 0;
         display: block;
 
-        legend {
+        legend, i {
             color: #FFF;
             font-weight: 300;
         }
@@ -76,6 +89,11 @@ export default {
             padding: 5px;
             text-align: center;
             border-radius: 16px;
+        }
+
+        i {
+            cursor: pointer;
+            font-size: 18px;
         }
     }
 </style>

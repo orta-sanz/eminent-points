@@ -18,6 +18,16 @@ export default {
             });
         },
         /**
+         * Remove a player point
+         */
+        removePlayerPoint(state, { player, pointId }) {
+            const updatedPlayerPoints = state.playerPointNames[player].filter((playerPoint) => (
+                playerPoint.id !== pointId
+            ));
+
+            state.playerPointNames[player] = updatedPlayerPoints;
+        },
+        /**
          * Update the value of a player's point
          * @param player String (one | two)
          * @param pointId String

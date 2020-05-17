@@ -21,3 +21,6 @@ Use `yarn install` to install the required dependencies.
 
 ## Start local server
 After installing all dependencies you can run `yarn start`.
+
+## Vendors
+- Fonts by [fontello](http://fontello.com/)
