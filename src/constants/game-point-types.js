@@ -1,42 +1,58 @@
 export default [
     {
         id: 'colony',
-        name: 'Colonia',
-        tip: '1 unto por cada {{ icon }} en cartas de Colonia'
+        name: {
+            singular: 'Colonia',
+            plural: 'Colonias'
+        },
     },
     {
         id: 'trophy',
-        name: 'Trofeo',
-        tip: '1 punto por cada {{ icon }} en cartas de Trofeo'
+        name: {
+            singular: 'Trofeo',
+            plural: 'Trofeos'
+        }
     },
     {
         id: 'capital',
-        name: 'Capital',
-        tip: '1 punto por cada icono de Capital que haya en las cartas de tecnología, colonias o trofeos'
+        name: {
+            singular: 'Capital',
+            plural: 'Capital'
+        }
     },
     {
         id: 'tech',
-        name: 'Tecnología',
-        tip: '1 punto por cada {{ icon }} en cartas de Tecnología'
+        name: {
+            singular: 'Tecnología',
+            plural: 'Tecnologías'
+        }
     },
     {
         id: 'color-red',
-        name: 'Cartas de color Rojo',
-        tip: '1 punto por cada {{ icon }} en cartas con el color Rojo'
+        name: {
+            singular: 'Color rojo',
+            plural: 'Colores rojo'
+        }
     },
     {
         id: 'color-yellow',
-        name: 'Cartas de color Amarillo',
-        tip: '1 punto por cada {{ icon }} en cartas con el color Amarillo'
+        name: {
+            singular: 'Color amarillo',
+            plural: 'Colores amarillos'
+        }
     },
     {
         id: 'color-green',
-        name: 'Cartas de color Verde',
-        tip: '1 punto por cada {{ icon }} en cartas con el color Verde'
+        name: {
+            singular: 'Color Verde',
+            plural: 'Colores verdes'
+        }
     },
     {
         id: 'color-purple',
-        name: 'Cartas de color Púrpura',
-        tip: '1 punto por cada {{ icon }} en cartas con el color Púrpura'
+        name: {
+            singular: 'Color Púrpura',
+            plural: 'Colores púrpura'
+        }
     }
 ];

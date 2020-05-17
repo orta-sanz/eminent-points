@@ -1,6 +1,6 @@
 <template>
-    <section class="section-header">
-        <div class="section-header--title">
+    <section class="header">
+        <div class="header--title">
             <h1>EMINENT</h1>
             <h2>DOMAIN</h2>
             <h3>- Asistente de Puntuación -</h3>
@@ -8,20 +8,10 @@
     </section>
 </template>
 
-<script type="text/javascript">
-export default {
-    data: function() {
-        return {
-
-        };
-    }
-};
-</script>
-
 <style lang="scss" scoped>
     @import '../styles/_variables.scss';
 
-    .section-header {
+    .header {
         display: flex;
         position: relative;
         margin-bottom: 64px;

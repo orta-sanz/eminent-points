@@ -1,9 +1,9 @@
 <template>
     <div>
-        <SectionHeader />
+        <Header />
 
         <transition name="fade">
-            <InitialForm v-if="!$store.getters.gameIsStarted" />
+            <PlayerForm v-if="!$store.getters.gameIsStarted" />
         </transition>
 
         <transition name="fade">
@@ -12,11 +12,11 @@
                 style="transition-delay: 0.5s;"
                 class="player-board"
             >
-                <PlayerBoard
+                <PointsSelect
                     :name="$store.getters.playerName('one')"
                     player="one"
                 />
-                <PlayerBoard
+                <PointsSelect
                     :name="$store.getters.playerName('two')"
                     player="two"
                 />
@@ -26,15 +26,15 @@
 </template>
 
 <script>
-import InitialForm from './components/initial-form.vue';
-import PlayerBoard from './components/player-board.vue';
-import SectionHeader from './components/section-header.vue';
+import Header from './components/header.vue';
+import PlayerForm from './components/player/form.vue';
+import PointsSelect from './components/points/select.vue';
 
 export default {
     components: {
-        PlayerBoard,
-        InitialForm,
-        SectionHeader
+        PointsSelect,
+        PlayerForm,
+        Header
     }
 };
 </script>

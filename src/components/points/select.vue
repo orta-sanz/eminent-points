@@ -21,7 +21,7 @@
                 :value="point.id"
                 :disabled="$store.getters.pointAlreadyInUse(player, point.id)"
             >
-                {{ point.name }}
+                {{ point.name.singular }}
             </option>
         </select>
 
@@ -33,7 +33,7 @@
             Añadir
         </button>
 
-        <PointType
+        <PointForm
             v-for="playerPoint in playerPointTypes"
             :key="playerPoint.key"
             :point="playerPoint"
@@ -43,12 +43,12 @@
 </template>
 
 <script>
-import PointType from './point-type.vue';
-import gamePointTypes from '../constants/game-point-types.js';
+import PointForm from './form.vue';
+import gamePointTypes from '../../constants/game-point-types.js';
 
 export default {
     components: {
-        PointType
+        PointForm
     },
     props: {
         name: {

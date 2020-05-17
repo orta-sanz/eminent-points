@@ -14,9 +14,7 @@ It is the perfect excuse to program :)
     - `npm install -g yarn`
 
 
-- Also all commits must be done with [Commitizen]()
-    - `npm install g commitizen`
-    - And use `git cz` instead of `git commit`
+- Also all commits must be done with [Commitizen](https://github.com/commitizen/cz-cli#conventional-commit-messages-as-a-global-utility)
 
 ## Dependencies
 Use `yarn install` to install the required dependencies.

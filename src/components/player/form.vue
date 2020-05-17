@@ -1,20 +1,20 @@
 <template>
-    <section class="initial-form">
+    <section class="player-form">
         <p>En primer lugar, introduce el nombre de los jugadores.</p>
 
         <form
-            class="initial-form--wrapper"
+            class="player-form--wrapper"
             @submit="startGame"
         >
             <article
                 v-for="playerNumber in 2"
                 :key="playerNumber"
-                class="initial-form--player"
+                class="player-form--player"
             >
-                <label class="initial-form--label">
+                <label class="player-form--label">
                     <p>Jugador {{ playerNumber }}</p>
 
-                    <div class="input-label initial-form--input">
+                    <div class="input-label player-form--input">
                         <input
                             type="text"
                             :name="`${playerNumber === 1 ? 'one' : 'two'}`"
@@ -29,7 +29,7 @@
             <button
                 type="submit"
                 name="button"
-                class="btn initial-form--button"
+                class="btn player-form--button"
             >
               ¡Empezar!
             </button>
@@ -58,9 +58,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    @import '../styles/_variables.scss';
+    @import '../../styles/_variables.scss';
 
-    .initial-form {
+    .player-form {
         color: #FFF;
         margin: 0 16px;
 
